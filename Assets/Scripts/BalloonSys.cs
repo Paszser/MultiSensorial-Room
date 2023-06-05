@@ -29,12 +29,15 @@ public class BalloonSys : MonoBehaviour
     {
         if(other.gameObject.layer == 9)
         {
-            _randomX = Random.Range(-4, -1);
-            _randomY = Random.Range(0.85f, 1.6f);
-            gameObject.transform.position = new Vector3(_randomX, _randomY, _randomZ);
+            GenerateBalloon();
             _counter++;
-
-
         }
+    }
+
+    private void GenerateBalloon()
+    {
+        _randomX = Random.Range(-4, -1);
+        _randomY = Random.Range(0.85f, 1.6f);
+        gameObject.transform.position = new Vector3(_randomX, _randomY, _randomZ);
     }
 }

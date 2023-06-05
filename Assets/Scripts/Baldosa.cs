@@ -5,6 +5,7 @@ using UnityEngine;
 public class Baldosa : MonoBehaviour
 {
     public GameObject _parentBaldosa;
+    public int _baldosaValue;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +22,16 @@ public class Baldosa : MonoBehaviour
     {
         if (other.gameObject.layer == 9)
         {
-            _parentBaldosa.GetComponent<BaldosasController>().SelectOtherBaldosa();
-            gameObject.SetActive(false);
+            if (BaldosasController._game)
+            {
+                BaldosasController._colorBaldosas.Add(_baldosaValue); //se añade el valor de la baldosa al pisarla
+            }
+            else
+            {
+                _parentBaldosa.GetComponent<BaldosasController>().SelectOtherBaldosa();
+                gameObject.SetActive(false);
+            }
+            
         }
     }
 }
