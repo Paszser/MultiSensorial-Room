@@ -43,7 +43,7 @@ public class LeFisheSys : MonoBehaviour
     private void GenerateFishe()
     {
         _randomY = Random.Range(0.85f, 1.6f);
-        _fisheSpeed = Random.Range(0.3f, 0.8f);
+        _fisheSpeed = Random.Range(0.003f, 0.008f);
         transform.position = new Vector3(_positionX, _randomY, _randomZ);
     }
 

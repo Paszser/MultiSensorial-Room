@@ -7,11 +7,11 @@ public class BaldosasController : MonoBehaviour
     public int _num;
     public List<GameObject> _baldosas;
     int _prevnum;
-    public static bool _game;
+    public static bool _game;   //determina si la partida está activa o no
     public static List<int> _colorBaldosas = new List<int>(4); //contiene el valor de las baldosas que identifica cada color
-    public bool resultado = true;
-    public GameObject _good;
-    public GameObject _bad;
+    public bool resultado = true;   // recoge si la solución va siendo o es válida cuando se compruebe
+    public GameObject _good;    //resultado correcto
+    public GameObject _bad;     //resultado nulo   
     // Start is called before the first frame update
     void Start()
     {

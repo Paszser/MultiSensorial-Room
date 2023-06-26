@@ -9,13 +9,13 @@ public class Baldosa : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,13 +25,23 @@ public class Baldosa : MonoBehaviour
             if (BaldosasController._game)
             {
                 BaldosasController._colorBaldosas.Add(_baldosaValue); //se añade el valor de la baldosa al pisarla
+                GetComponent<Animator>().Play("PressState");
             }
             else
             {
                 _parentBaldosa.GetComponent<BaldosasController>().SelectOtherBaldosa();
                 gameObject.SetActive(false);
             }
+
             
+
         }
+    }
+
+    IEnumerator WinkBaldosa()
+    {
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        yield return new WaitForSeconds(1.0f);
+        gameObject.GetComponent<MeshRenderer>().enabled = true;
     }
 }
