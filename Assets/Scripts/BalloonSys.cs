@@ -13,7 +13,7 @@ public class BalloonSys : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _randomX = Random.Range(-4, -1);
+        _randomX = Random.Range(-1, 2);
         _randomY = Random.Range(0.85f, 1.6f);
         gameObject.transform.position = new Vector3(_randomX, _randomY, _randomZ);
 
@@ -36,7 +36,7 @@ public class BalloonSys : MonoBehaviour
 
     private void GenerateBalloon()
     {
-        _randomX = Random.Range(-4, -1);
+        _randomX = Random.Range(-1, 2);
         _randomY = Random.Range(0.85f, 1.6f);
         gameObject.transform.position = new Vector3(_randomX, _randomY, _randomZ);
     }
